@@ -15,18 +15,18 @@ import uleri from './components/uleri.vue'
 
   <main>
     <!--<TheWelcome />-->
-    <div class="search_box">
+    <div class="search-box">
       <!--ULRIKAS-->
       In this Div is a search box component
       <uleri msg="Search here"/>
     </div>
     <br/><br/><br/>
-    <div class="category_list">
+    <div class="category-list">
       <!--AMANDA-->
       In this Div is a list of the different categories
     </div>
     <br/><br/><br/>
-    <div class="recipe_list">
+    <div class="recipe-list">
       <!--AMANDA-->
       In this Div is a list of all the recipes
     </div>
