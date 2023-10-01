@@ -1,19 +1,32 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import uleri from './components/uleri.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div class="search-box">
+      <!--ULRIKAS-->
+      In this Div is a search box component
+      <uleri msg="Search here"/>
+      <uleri searchAlgoritm/>
     </div>
   </header>
 
+  <aside>
+    <div class="category-list">
+      <!--AMANDA-->
+      In this Div is a list of the different categories
+    </div>
+  </aside>
+
   <main>
-    <TheWelcome />
+    <!--<TheWelcome />-->
+    <div class="recipe-list">
+      <!--AMANDA-->
+      In this Div is a list of all the recipes
+    </div>
   </main>
 </template>
 
