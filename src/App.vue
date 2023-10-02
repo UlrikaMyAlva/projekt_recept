@@ -1,6 +1,5 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import {RouterLink, RouterView } from 'vue-router';
 import uleri from './components/uleri.vue'
 </script>
 
@@ -27,6 +26,8 @@ import uleri from './components/uleri.vue'
       <!--AMANDA-->
       In this Div is a list of all the recipes
     </div>
+    <RouterLink to="/">show home</RouterLink>
+    <RouterView></RouterView>
   </main>
 </template>
 
