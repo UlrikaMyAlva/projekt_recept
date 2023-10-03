@@ -1,4 +1,3 @@
-<!-- TEST TEST TEST -->
 
 <script setup>
 defineProps({
@@ -10,26 +9,70 @@ defineProps({
   //A PROP THAT TAKES IN THE SEARCH WORD?
 })
 
-function searchAlgoritm() {
-  //These two are only for me testing
-  let text = "A tasty mexican meal for the whole family!";
-  let textLower = text.toLowerCase();
-  let search = "mexican";
-  let searchLower = search.toLowerCase();
 
-  let result = textLower.includes(searchLower);
+function search () {
+  let ulrika = document.getElementById("searchbox").value;
+  console.log(ulrika);
+  fetchDataFromSearch(ulrika);
+}
 
-  console.log(result);
+function fetchDataFromSearch(search) {
 
-  //COMPARE EACH DESCRIPTION OF EACH RECIPE 
-  //IF TRUE, MAKE ARRAY? SEND TO AMANDAS RECIPE LIST?
+  fetch (`https://jau22-recept-grupp1-ijykxvjg4n3m.reky.se/recipes?query=${search}`)
+  .then(response => {
+    if (!response.ok) {
+      console.log("Not successful")
+    }
+    return response.json()
+  })
+  .then(data => renderData(data, search))
+  .then(res=>{console.log(res)})
+
+  //If array length = 0, show "Inga matchningar för din sökning: , annars recept"
+
 
 }
+
+function renderData(data, search) {
+  let channelArray = [];
+
+  for (let d of data) {
+    let c = {
+        avgRating:d.avgRating,
+        categories:d.categories, //[]
+        description:d.description,
+        imageUrl:d.imageUrl,
+        ingredients:d.ingredients, //[] OBJEKT ARRAY
+        instructions:d.instructions, //[]
+        timeInMins:d.timeInMins,
+        title:d.title,
+        id:d._id
+    }
+
+    channelArray.push(c);
+
+  }
+
+  console.log(channelArray[0]);
+
+  if (channelArray.length == 0) {
+    document.getElementById("search").innerHTML= `Inga matchningar på ${search}`;
+  }
+  else {
+    document.getElementById("search").innerHTML= `Du har sökt på ${search}`;
+    return channelArray;
+  }
+
+}
+
+
 </script>
 
 <template>
   <div class="greetings">
+    <h1 id="search"></h1>
     <h1 class="green">{{ msg }}</h1>
-    <input type="text" placeholder="Search..">
+    <input id="searchbox" type="text" placeholder="Search..">
+    <button type="input" id="btn" @click="search">Search</button>
   </div>
 </template>

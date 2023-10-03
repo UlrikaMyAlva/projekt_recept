@@ -10,7 +10,6 @@ import uleri from './components/uleri.vue'
       <!--ULRIKAS-->
       In this Div is a search box component
       <uleri msg="Search here"/>
-      <uleri searchAlgoritm/>
     </div>
   </header>
 
