@@ -27,6 +27,8 @@ import uleri from './components/uleri.vue'
       In this Div is a list of all the recipes
     </div>
     <RouterLink to="/">show home</RouterLink>
+    <RouterLink to="/category/notImplementedCategory">show category</RouterLink>
+    <RouterLink to="/recipe/notImplementedRecipe">show recipe</RouterLink>
     <RouterView></RouterView>
   </main>
 </template>

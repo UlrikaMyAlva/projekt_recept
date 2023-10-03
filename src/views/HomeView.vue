@@ -1,5 +1,4 @@
 <template>
-  
     <div>
       <p>Nothing yet</p>
       <CommentForm></CommentForm>
