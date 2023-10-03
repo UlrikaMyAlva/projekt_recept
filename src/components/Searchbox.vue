@@ -6,7 +6,6 @@ defineProps({
     required: true
   }
 
-  //A PROP THAT TAKES IN THE SEARCH WORD?
 })
 
 
@@ -27,9 +26,6 @@ function fetchDataFromSearch(search) {
   })
   .then(data => renderData(data, search))
   .then(res=>{console.log(res)})
-
-  //If array length = 0, show "Inga matchningar för din sökning: , annars recept"
-
 
 }
 
