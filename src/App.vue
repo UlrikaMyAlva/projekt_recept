@@ -1,35 +1,31 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import uleri from './components/uleri.vue'
+import {RouterLink, RouterView } from 'vue-router';
+import Searchbox from './components/Searchbox.vue'
 </script>
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
-
-    <div class="wrapper">
-      <!-- <HelloWorld msg="Receptsajt" /> -->
+    <div class="search-box">
+      <!--ULRIKAS-->
+      <Searchbox msg="Search here"/>
     </div>
   </header>
 
-  <main>
-    <!--<TheWelcome />-->
-    <div class="search-box">
-      <!--ULRIKAS-->
-      In this Div is a search box component
-      <uleri msg="Search here"/>
-    </div>
-    <br/><br/><br/>
+  <aside>
     <div class="category-list">
       <!--AMANDA-->
       In this Div is a list of the different categories
     </div>
-    <br/><br/><br/>
+  </aside>
+
+  <main>
+    <!--<TheWelcome />-->
     <div class="recipe-list">
       <!--AMANDA-->
       In this Div is a list of all the recipes
     </div>
+    <RouterLink to="/">show home</RouterLink>
+    <RouterView></RouterView>
   </main>
 </template>
 
