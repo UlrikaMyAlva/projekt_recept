@@ -10,8 +10,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      geh
-        path: '/category/:categoryId', // task 2.3.1 Skapa routes till Kategorisida
+      path: '/category/:categoryId', // task 2.3.1 Skapa routes till Kategorisida
       name: 'category',
       component: () => import('../views/CategoryView.vue')
     },
