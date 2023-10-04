@@ -10,16 +10,17 @@ const router = createRouter({
       component: HomeView
     },
     {
-        path: '/category/:categoryId',
-        name: 'category',
-        component: () => import('../views/CategoryView.vue')
-      },
-      ,
+      geh
+        path: '/category/:categoryId', // task 2.3.1
+      name: 'category',
+      component: () => import('../views/CategoryView.vue')
+    },
+    ,
     {
-        path: '/recipe/:recipeId',
-        name: 'recipe',
-        component: () => import('../views/RecipeView.vue')
-      }
+      path: '/recipe/:recipeId', // task 2.3.2
+      name: 'recipe',
+      component: () => import('../views/RecipeView.vue')
+    }
   ]
 })
 
