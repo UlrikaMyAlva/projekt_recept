@@ -10,21 +10,21 @@ defineProps({
 
 
 function search () {
-  let ulrika = document.getElementById("searchbox").value;
-  console.log(ulrika);
-  fetchDataFromSearch(ulrika);
+  let inputSearchBox = document.getElementById("searchbox").value;
+  console.log(inputSearchBox);
+  fetchDataFromSearch(inputSearchBox);
 }
 
-function fetchDataFromSearch(search) {
+function fetchDataFromSearch(inputSearchBox) {
 
-  fetch (`https://jau22-recept-grupp1-ijykxvjg4n3m.reky.se/recipes?query=${search}`)
+  fetch (`https://jau22-recept-grupp1-ijykxvjg4n3m.reky.se/recipes?query=${inputSearchBox}`)
   .then(response => {
     if (!response.ok) {
       console.log("Not successful")
     }
     return response.json()
   })
-  .then(data => renderData(data, search))
+  .then(data => renderData(data, inputSearchBox))
   .then(res=>{console.log(res)})
 
 }
@@ -51,17 +51,15 @@ function renderData(data, search) {
 
   console.log(channelArray[0]);
 
-  if (channelArray.length == 0) {
-    document.getElementById("search").innerHTML= `Inga matchningar på ${search}`;
+  if (channelArray.length == 0 || search === "") {
+    document.getElementById("search").innerHTML= `Inga matchningar på "${search}"`;
   }
   else {
-    document.getElementById("search").innerHTML= `Du har sökt på ${search}`;
+    document.getElementById("search").innerHTML= `Du har sökt på "${search}" och fått ${channelArray.length} recept`;
     return channelArray;
   }
 
 }
-
-
 </script>
 
 <template>
