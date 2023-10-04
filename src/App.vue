@@ -1,14 +1,13 @@
 <script setup>
 import {RouterLink, RouterView } from 'vue-router';
-import uleri from './components/uleri.vue'
+import Searchbox from './components/Searchbox.vue'
 </script>
 
 <template>
   <header>
     <div class="search-box">
       <!--ULRIKAS-->
-      In this Div is a search box component
-      <uleri msg="Search here"/>
+      <Searchbox msg="Search here"/>
     </div>
   </header>
 
