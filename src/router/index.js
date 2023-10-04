@@ -11,13 +11,13 @@ const router = createRouter({
     },
     {
       geh
-        path: '/category/:categoryId', // task 2.3.1
+        path: '/category/:categoryId', // task 2.3.1 Skapa routes till Kategorisida
       name: 'category',
       component: () => import('../views/CategoryView.vue')
     },
     ,
     {
-      path: '/recipe/:recipeId', // task 2.3.2
+      path: '/recipe/:recipeId', // task 2.3.2 Skapa routes till Receptsida
       name: 'recipe',
       component: () => import('../views/RecipeView.vue')
     }
