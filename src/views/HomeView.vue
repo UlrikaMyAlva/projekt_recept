@@ -1,24 +1,23 @@
 <template>
-    <div>
-      <p>Nothing yet</p>
-      <CommentForm></CommentForm>
-    </div>
+  <div>
+    <p>Nothing yet</p>
+    <p>AmandaTest</p>
+    <CommentForm></CommentForm>
+  </div>
 </template>
 
 <script>
 import CommentForm from '../components/CommentForm.vue';
-  export default {
-    components: {
+export default {
+  components: {
     CommentForm
-},
-    data(){
-      return{
-        
-      }
+  },
+  data() {
+    return {
+
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
